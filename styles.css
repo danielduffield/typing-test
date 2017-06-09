@@ -36,3 +36,15 @@ h1 {
   font-weight: normal;
   font-family: 'VT323', monospace;
 }
+
+.selected {
+  font-size: 2em;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
