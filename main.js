@@ -13,6 +13,7 @@ function stringToSpannedLetters(string){
   return $spannedLetters
 }
 
-function selectLetter(processedString) {
-
+function selectLetter(index) {
+  var selectedLetter = document.getElementById('letter-' + index)
+  selectedLetter.setAttribute('class', 'selected')
 }
