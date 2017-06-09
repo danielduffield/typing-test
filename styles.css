@@ -12,11 +12,12 @@
 
 #container {
   width: 80%;
-  height: 30%;
+  height: 400px;
   background-color: whitesmoke;
   margin: 150px auto 0;
   border: 1px solid dimgrey;
   border-radius: 30px;
+  min-width: 600px;
 }
 
 h1 {
