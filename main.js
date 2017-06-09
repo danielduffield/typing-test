@@ -28,6 +28,8 @@ function main(){
     console.log('Dom loaded')
     selectLetter(0)
   })
+  document.addEventListener('keydown', function(event){
+  })
 }
 
 main()
