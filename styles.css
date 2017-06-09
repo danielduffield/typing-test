@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#landing {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: lightgrey;
+}
+
+#container {
+  width: 80%;
+  height: 400px;
+  background-color: whitesmoke;
+  margin: 150px auto 0;
+  border: 1px solid dimgrey;
+  border-radius: 30px;
+  min-width: 600px;
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.5em;
+  font-weight: 500;
+  word-spacing: 0.25em;
+  margin: 40px 0 25px;
+  text-align: center;
+}
+
+#test-text {
+  padding: 100px 0;
+  font-size: 2em;
+  text-align: center;
+  font-weight: normal;
+  font-family: 'VT323', monospace;
+}
