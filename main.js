@@ -5,6 +5,7 @@ function stringToSpannedLetters(string){
   var $spannedLetters
   $spannedLetters = document.createElement('div')
   $spannedLetters.setAttribute('id', 'test-text')
+  $spannedLetters.setAttribute('class', 'test-and-results')
   for (let i = 0; i < string.length; i++) {
     var $letterSpan
     $letterSpan = document.createElement('span')
