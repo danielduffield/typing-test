@@ -1,6 +1,3 @@
-var $testText = document.getElementById('test-text')
-var $container = document.getElementById('container')
-
 function stringToSpannedLetters(string) {
   var $spannedLetters
   $spannedLetters = document.createElement('div')
@@ -73,6 +70,16 @@ function displayResults(score, testLength) {
 }
 
 function main() {
+  var typingTests = [
+    'The sky above the port was the color of television, tuned to a dead channel.',
+    'It was a bright cold day in April, and the clocks were striking thirteen.',
+    'I am an invisible man.',
+    'The sun shone, having no alternative, on nothing new.',
+    'All this happened, more or less.',
+    'It was a pleasure to burn.'
+  ]
+  var $testText = document.getElementById('test-text')
+  var $container = document.getElementById('container')
   var testText = $testText.textContent
   var $spannedLetters = stringToSpannedLetters($testText.textContent)
   $container.replaceChild($spannedLetters, $testText)
