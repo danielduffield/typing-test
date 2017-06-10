@@ -38,6 +38,11 @@ function checkInput(string, userChar, index) {
   }
 }
 
+function displayResults(score, testLength) {
+  var $results = document.getElementById('test-results')
+  $results.textContent = 'You scored ' + score + '/' + testLength + ' characters typed correctly. That\'s ' + Math.floor(score / testLength * 100) + '% correct.'
+}
+
 function main() {
   var testText = $testText.textContent
   var $spannedLetters = stringToSpannedLetters($testText.textContent)
@@ -46,11 +51,11 @@ function main() {
     selectLetter(0)
   })
   var testTextIndex = 0
-  var correctCount = 0
+  var score = 0
 
   var keypressHandler = function(event) {
     if (event.key !== 'Shift') {
-      correctCount += checkInput(testText, event.key, testTextIndex)
+      score += checkInput(testText, event.key, testTextIndex)
       testTextIndex++
       console.log(testTextIndex, testText.length)
       if (testTextIndex < testText.length) {
@@ -59,6 +64,7 @@ function main() {
       else {
         console.log('DONEZO')
         document.removeEventListener('keydown', keypressHandler)
+        displayResults(score, testText.length)
       }
     }
   }
