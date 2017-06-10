@@ -30,31 +30,37 @@ function checkInput(string, userChar, index) {
   if (string[index] === userChar) {
     $char = document.getElementById('char-' + index)
     $char.setAttribute('class', 'correct')
-    console.log('CORRECT')
+    return 1
   }
   else {
     $char = document.getElementById('char-' + index)
     $char.setAttribute('class', 'incorrect')
-    console.log('=[')
+    return 0
   }
 }
 
+function displayResults() {}
+
 function main(){
   testText = $testText.textContent
-  console.log(testText)
   var $spannedLetters = stringToSpannedLetters($testText.textContent)
-  console.log($spannedLetters)
   $container.replaceChild($spannedLetters, $testText)
   document.addEventListener('DOMContentLoaded', function(){
-    console.log('Dom loaded')
     selectLetter(0)
   })
   testTextIndex = 0
+  var correctCount = 0
   document.addEventListener('keydown', function(event){
     if (event.key !== 'Shift') {
-      checkInput(testText, event.key, testTextIndex)
+      correctCount += checkInput(testText, event.key, testTextIndex)
       testTextIndex++
-      selectLetter(testTextIndex)
+      console.log(testTextIndex, testText.length)
+      if (testTextIndex < testText.length) {
+        selectLetter(testTextIndex)
+      }
+      else {
+        console.log('DONEZO')
+      }
     }
   })
 }
