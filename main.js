@@ -53,6 +53,7 @@ function main(){
     checkInput(testText, event.key, testTextIndex)
     testTextIndex++
     selectLetter(testTextIndex)
+    }
   })
 }
 
