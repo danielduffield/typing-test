@@ -50,9 +50,10 @@ function main(){
   })
   testTextIndex = 0
   document.addEventListener('keydown', function(event){
-    checkInput(testText, event.key, testTextIndex)
-    testTextIndex++
-    selectLetter(testTextIndex)
+    if (event.key !== 'Shift') {
+      checkInput(testText, event.key, testTextIndex)
+      testTextIndex++
+      selectLetter(testTextIndex)
     }
   })
 }
