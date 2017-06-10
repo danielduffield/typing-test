@@ -48,7 +48,10 @@ function displayResults(score, testLength) {
     case (scorePercent === 0):
       $comment.textContent = 'Well done! You successfully mistyped every letter.'
       break
-    case (scorePercent < 50 && scorePercent !== 0):
+    case (scorePercent > 0 && scorePercent < 30):
+      $comment.textContent = 'Impressively terrible.'
+      break
+    case (scorePercent >= 30 && scorePercent < 50):
       $comment.textContent = 'Really? Couldn\'t get half right? Do you even homerow?'
       break
     case (scorePercent >= 50 && scorePercent < 75):
