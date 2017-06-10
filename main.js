@@ -17,20 +17,23 @@ function stringToSpannedLetters(string){
 
 function selectLetter(index) {
   var selectedLetter = document.getElementById('char-' + index)
+  var previousLetter = document.getElementById('char-' + (index - 1))
+  console.log(selectedLetter)
+
   selectedLetter.setAttribute('class', 'selected')
 }
 
 function checkInput(string, userChar, index) {
   console.log(string, userChar, index)
+  var $char
   if (string[index] === userChar) {
-    var $char
     $char = document.getElementById('char-' + index)
-    $char.setAttribute('id', 'corrrect')
+    $char.setAttribute('class', 'correct')
     console.log('CORRECT')
   }
   else {
     $char = document.getElementById('char-' + index)
-    $char.setAttribute('id', 'incorrect')
+    $char.setAttribute('class', 'incorrect')
     console.log('=[')
   }
 }
@@ -49,6 +52,7 @@ function main(){
   document.addEventListener('keydown', function(event){
     checkInput(testText, event.key, testTextIndex)
     testTextIndex++
+    selectLetter(testTextIndex)
   })
 }
 
