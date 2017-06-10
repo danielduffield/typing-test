@@ -1,7 +1,7 @@
 var $testText = document.getElementById('test-text')
 var $container = document.getElementById('container')
 
-function stringToSpannedLetters(string){
+function stringToSpannedLetters(string) {
   var $spannedLetters
   $spannedLetters = document.createElement('div')
   $spannedLetters.setAttribute('id', 'test-text')
@@ -18,7 +18,6 @@ function stringToSpannedLetters(string){
 
 function selectLetter(index) {
   var selectedLetter = document.getElementById('char-' + index)
-  var previousLetter = document.getElementById('char-' + (index - 1))
   console.log(selectedLetter)
 
   selectedLetter.setAttribute('class', 'selected')
@@ -39,18 +38,17 @@ function checkInput(string, userChar, index) {
   }
 }
 
-function displayResults() {}
-
-function main(){
-  testText = $testText.textContent
+function main() {
+  var testText = $testText.textContent
   var $spannedLetters = stringToSpannedLetters($testText.textContent)
   $container.replaceChild($spannedLetters, $testText)
-  document.addEventListener('DOMContentLoaded', function(){
+  document.addEventListener('DOMContentLoaded', function() {
     selectLetter(0)
   })
-  testTextIndex = 0
+  var testTextIndex = 0
   var correctCount = 0
-  document.addEventListener('keydown', function(event){
+
+  document.addEventListener('keydown', function(event) {
     if (event.key !== 'Shift') {
       correctCount += checkInput(testText, event.key, testTextIndex)
       testTextIndex++
