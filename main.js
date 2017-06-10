@@ -48,7 +48,7 @@ function main() {
   var testTextIndex = 0
   var correctCount = 0
 
-  document.addEventListener('keydown', function(event) {
+  var keypressHandler = function(event) {
     if (event.key !== 'Shift') {
       correctCount += checkInput(testText, event.key, testTextIndex)
       testTextIndex++
@@ -58,9 +58,12 @@ function main() {
       }
       else {
         console.log('DONEZO')
+        document.removeEventListener('keydown', keypressHandler)
       }
     }
-  })
+  }
+
+  document.addEventListener('keydown', keypressHandler)
 }
 
 main()
