@@ -76,7 +76,10 @@ function main() {
     'I am an invisible man.',
     'The sun shone, having no alternative, on nothing new.',
     'All this happened, more or less.',
-    'It was a pleasure to burn.'
+    'It was a pleasure to burn.',
+    'It was the best of times, it was the worst of times.',
+    'All happy families are alike; each unhappy family is unhappy in its own way.',
+    'A screaming comes across the sky.'
   ]
   var $testText = document.getElementById('test-text')
   var $container = document.getElementById('container')
