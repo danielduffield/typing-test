@@ -18,28 +18,37 @@ function stringToSpannedLetters(string){
 function selectLetter(index) {
   var selectedLetter = document.getElementById('char-' + index)
   selectedLetter.setAttribute('class', 'selected')
-  console.log(selectedLetter)
 }
 
 function checkInput(string, userChar, index) {
+  console.log(string, userChar, index)
   if (string[index] === userChar) {
+    var $char
     $char = document.getElementById('char-' + index)
-    $char.setAttribute('class', 'corrrect')
+    $char.setAttribute('id', 'corrrect')
+    console.log('CORRECT')
   }
   else {
-    document.getElementById('char-' + index).setAttribute('class', 'incorrrect')
-    $char.setAttribute('class', 'incorrect')
+    $char = document.getElementById('char-' + index)
+    $char.setAttribute('id', 'incorrect')
+    console.log('=[')
   }
 }
 
 function main(){
+  testText = $testText.textContent
+  console.log(testText)
   var $spannedLetters = stringToSpannedLetters($testText.textContent)
+  console.log($spannedLetters)
   $container.replaceChild($spannedLetters, $testText)
   document.addEventListener('DOMContentLoaded', function(){
     console.log('Dom loaded')
     selectLetter(0)
   })
+  testTextIndex = 0
   document.addEventListener('keydown', function(event){
+    checkInput(testText, event.key, testTextIndex)
+    testTextIndex++
   })
 }
 
