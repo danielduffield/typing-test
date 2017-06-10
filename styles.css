@@ -42,10 +42,10 @@ h1 {
 
 .selected {
   font-size: 2em;
-  -webkit-animation: highlight-selected 1.5s infinite; /* Safari 4+ */
-  -moz-animation: highlight-selected 1.5s infinite; /* Fx 5+ */
-  -o-animation: highlight-selected 1.5s infinite; /* Opera 12+ */
-  animation: highlight-selected 1.5s infinite; /* IE 10+, Fx 29+ */
+  -webkit-animation: highlight-selected 1s infinite; /* Safari 4+ */
+  -moz-animation: highlight-selected 1s infinite; /* Fx 5+ */
+  -o-animation: highlight-selected 1s infinite; /* Opera 12+ */
+  animation: highlight-selected 1s infinite; /* IE 10+, Fx 29+ */
 }
 
 .correct {
