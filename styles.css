@@ -30,7 +30,10 @@ h1 {
 }
 
 #test-text {
-  padding: 100px 0;
+  padding: 100px 0 50px;
+}
+
+.test-and-results {
   font-size: 2em;
   text-align: center;
   font-weight: normal;
