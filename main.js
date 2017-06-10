@@ -80,8 +80,9 @@ function main() {
   ]
   var $testText = document.getElementById('test-text')
   var $container = document.getElementById('container')
-  var testText = $testText.textContent
-  var $spannedLetters = stringToSpannedLetters($testText.textContent)
+  var testText = typingTests[Math.floor(Math.random() * typingTests.length)]
+  $testText.textContent = testText
+  var $spannedLetters = stringToSpannedLetters(testText)
   $container.replaceChild($spannedLetters, $testText)
   document.addEventListener('DOMContentLoaded', function() {
     selectLetter(0)
