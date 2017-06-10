@@ -39,8 +39,34 @@ function checkInput(string, userChar, index) {
 }
 
 function displayResults(score, testLength) {
-  var $results = document.getElementById('test-results')
-  $results.textContent = 'You scored ' + score + '/' + testLength + ' characters typed correctly. That\'s ' + Math.floor(score / testLength * 100) + '% correct.'
+  var scorePercent = score / testLength * 100
+  var $results = document.getElementById('test-results-score')
+  $results.textContent = 'You scored ' + score + '/' + testLength + ' characters typed correctly. That\'s ' + Math.floor(scorePercent) + '% correct.'
+  var $comment = document.getElementById('test-results-comment')
+  console.log(scorePercent)
+  switch (true) {
+    case (scorePercent === 0):
+      $comment.textContent = 'Well done! You successfully mistyped every letter.'
+      break
+    case (scorePercent < 50 && scorePercent !== 0):
+      $comment.textContent = 'Really? Couldn\'t get half right? Do you even homerow?'
+      break
+    case (scorePercent >= 50 && scorePercent < 75):
+      $comment.textContent = 'Not good enough.'
+      break
+    case (scorePercent >= 75 && scorePercent < 90):
+      $comment.textContent = 'Decent, but not terribly impressive. Try again.'
+      break
+    case (scorePercent >= 90 && scorePercent < 100):
+      $comment.textContent = 'Now we\'re talking. But can you get a perfect score?'
+      break
+    case (scorePercent === 100):
+      $comment.textContent = 'What a tryhard. Well done, I guess.'
+      break
+    default:
+      $comment.textContent = 'My name is ERROR'
+      break
+  }
 }
 
 function main() {
