@@ -21,6 +21,17 @@ function selectLetter(index) {
   console.log(selectedLetter)
 }
 
+function checkInput(string, userChar, index) {
+  if (string[index] === userChar) {
+    $char = document.getElementById('char-' + index)
+    $char.setAttribute('class', 'corrrect')
+  }
+  else {
+    document.getElementById('char-' + index).setAttribute('class', 'incorrrect')
+    $char.setAttribute('class', 'incorrect')
+  }
+}
+
 function main(){
   var $spannedLetters = stringToSpannedLetters($testText.textContent)
   $container.replaceChild($spannedLetters, $testText)
