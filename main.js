@@ -105,6 +105,7 @@ function main() {
         console.log('DONEZO')
         document.removeEventListener('keydown', keypressHandler)
         displayResults(score, testText.length)
+        $container.setAttribute('class', 'container-results')
       }
     }
   }
